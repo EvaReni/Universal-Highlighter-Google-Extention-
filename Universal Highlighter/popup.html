@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Universal Highlighter</title>
+
+  <style>
+    body {
+      width: 270px;
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+
+    .header-icon {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .setting {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .status {
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .colors-title {
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .colors {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .color-button {
+      padding: 9px 5px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .color-button:hover {
+      background: #f5f5f5;
+    }
+
+    .color-button.selected {
+      border: 2px solid #222;
+      font-weight: bold;
+    }
+
+    .clear-button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 9px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .clear-button:hover {
+      background: #f5f5f5;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>
+    <img
+      src="icons/icon.png"
+      alt=""
+      class="header-icon"
+    >
+    <span>Highlighter</span>
+  </h2>
+
+  <div class="setting">
+    <span>Highlighter enabled</span>
+
+    <input
+      id="enabled"
+      type="checkbox"
+    >
+  </div>
+
+  <div
+    id="status"
+    class="status"
+  ></div>
+
+  <div class="colors-title">
+    Choose your highlight color:
+  </div>
+
+  <div class="colors">
+
+    <button
+      class="color-button"
+      data-color="yellow"
+      type="button"
+    >
+      🟨 Yellow
+    </button>
+
+    <button
+      class="color-button"
+      data-color="blue"
+      type="button"
+    >
+      🟦 Blue
+    </button>
+
+    <button
+      class="color-button"
+      data-color="green"
+      type="button"
+    >
+      🟩 Green
+    </button>
+
+    <button
+      class="color-button"
+      data-color="pink"
+      type="button"
+    >
+      🩷 Pink
+    </button>
+
+  </div>
+
+  <button
+    id="clear"
+    class="clear-button"
+    type="button"
+  >
+    Clear highlights on this page
+  </button>
+
+  <script src="popup.js"></script>
+
+</body>
+
+</html>
